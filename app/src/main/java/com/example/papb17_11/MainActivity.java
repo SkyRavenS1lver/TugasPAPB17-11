@@ -21,13 +21,12 @@ public class MainActivity extends AppCompatActivity {
     Button mGetAll;
     TextView mHasilAll;
 
-    DatabaseHelper mDatabaseHelper;
+    public static DatabaseHelper mDatabaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         mNameEditText = findViewById(R.id.ET_Name);
         mPriceEditText = findViewById(R.id.ET_Price);
@@ -76,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         mDatabaseHelper.insertRecord(product);
         Toast.makeText(MainActivity.this, "Data Added", Toast.LENGTH_SHORT).show();
     }
+
     public void showPriceFromName(String keyword){
         Product product = mDatabaseHelper.getProductFromName(keyword);
         mPriceResult.setText(String.valueOf(product.getPrice()));

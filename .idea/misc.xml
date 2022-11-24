@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Project/PAPB17-11/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.119" />
+        <entry key="..\:/Android Project/PAPB17-11/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.119" />
+        <entry key="..\:/Android Project/PAPB17-11/app/src/main/res/drawable/rv_bg.xml" value="0.129" />
+        <entry key="..\:/Android Project/PAPB17-11/app/src/main/res/layout/activity_edit.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android Project/PAPB17-11/app/src/main/res/layout/activity_product_detail.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android Project/PAPB17-11/app/src/main/res/layout/activity_read_data.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android Project/PAPB17-11/app/src/main/res/layout/product_rv_item.xml" value="0.22826086956521738" />
         <entry key="..\:/AndroidProject/PAPB17-11/app/src/main/res/layout/activity_main.xml" value="0.17806484295845998" />
       </map>
     </option>
