@@ -3,6 +3,9 @@ package com.example.papb17_11.ProductRelated;
 public class Product {
     private int id;
     private String name;
+    private String desc;
+    private int price;
+    private String brand;
 
     public Product() {
     }
@@ -13,9 +16,6 @@ public class Product {
         this.brand = brand;
         this.desc = desc;
     }
-
-    private int price;
-    private String brand;
 
     public String getBrand() {
         return brand;
@@ -33,7 +33,6 @@ public class Product {
         this.desc = desc;
     }
 
-    private String desc;
 
     public int getId() {
         return id;

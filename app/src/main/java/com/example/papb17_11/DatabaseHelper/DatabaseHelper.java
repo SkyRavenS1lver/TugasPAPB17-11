@@ -104,9 +104,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PRODUCT_PRICE, product.getPrice());
         values.put(PRODUCT_BRAND, product.getBrand());
         values.put(PRODUCT_DESC, product.getDesc());
-        System.out.println(String.valueOf(product.getId()));
         //Executing update data
-//        return db.update(PRODUCT_TABLE,values, PRODUCT_ID+" = ?", new String[]{String.valueOf(product.getId())});
         db.update(PRODUCT_TABLE,values, PRODUCT_ID+" = ?", new String[]{String.valueOf(product.getId())});
     }
 
