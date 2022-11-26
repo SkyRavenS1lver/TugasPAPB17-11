@@ -49,12 +49,12 @@ public class ProductDetail extends AppCompatActivity {
             edit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    Product product = ReadDataActivity.mDatabaseHelper.getProductFromId(productId);
                     judul.setText("Edit Data");
                     changeState(true);
                     confirm.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Product product = ReadDataActivity.mDatabaseHelper.getProductFromId(productId);
                             product.setName(name.getText().toString());
                             product.setPrice(Integer.parseInt(price.getText().toString()));
                             product.setBrand(brand.getText().toString());
@@ -69,6 +69,10 @@ public class ProductDetail extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             changeState(false);
+                            name.setText(product.getName());
+                            brand.setText(product.getBrand());
+                            price.setText(String.valueOf(product.getPrice()));
+                            description.setText(product.getDesc());
                             judul.setText("Detail Data");
                         }
                     });
