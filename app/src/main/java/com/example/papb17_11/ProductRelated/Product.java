@@ -1,8 +1,19 @@
-package com.example.papb17_11;
+package com.example.papb17_11.ProductRelated;
 
 public class Product {
     private int id;
     private String name;
+
+    public Product() {
+    }
+
+    public Product(String name, int price, String brand, String desc) {
+        this.name = name;
+        this.price = price;
+        this.brand = brand;
+        this.desc = desc;
+    }
+
     private int price;
     private String brand;
 

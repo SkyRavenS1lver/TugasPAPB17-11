@@ -1,4 +1,4 @@
-package com.example.papb17_11;
+package com.example.papb17_11.DatabaseHelper;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,11 +8,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.papb17_11.ProductRelated.Product;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "toko-db";
+    public static final String DATABASE_NAME = "toko-dbV3";
     private static final  int DATABASE_VERSION = 1;
     //The table
     private static final String PRODUCT_TABLE = "productV2";
@@ -30,7 +31,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String CREATE_TABLE_PRODUCT = " CREATE TABLE " + PRODUCT_TABLE +
-                "( "+PRODUCT_ID+" INTEGER PRIMARY KEY, "+
+                "( "+PRODUCT_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+
                 PRODUCT_NAME+" TEXT, "+ PRODUCT_PRICE + " INTEGER, "+
             PRODUCT_BRAND+" TEXT, "+ PRODUCT_DESC+" TEXT ) ";
         sqLiteDatabase.execSQL(CREATE_TABLE_PRODUCT);
@@ -55,12 +56,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public Product getProductFromName(String name){
+    public Product getProductFromId(int id){
         SQLiteDatabase db = getReadableDatabase();
-
         // Pointer record
-        Cursor cursor = db.query(PRODUCT_TABLE, new String[]{PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE},
-                PRODUCT_NAME+"=?", new String[]{name},null,null,null);
+        Cursor cursor = db.query(PRODUCT_TABLE, new String[]{PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE,PRODUCT_BRAND, PRODUCT_DESC},
+                PRODUCT_ID+"=?", new String[]{String.valueOf(id)},null,null,null);
 
         // Mengambil data pertama dari cursor
         if (cursor != null){
@@ -72,11 +72,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         product.setId(cursor.getInt(0));
         product.setName(cursor.getString(1));
         product.setPrice(cursor.getInt(2));
+        product.setBrand(cursor.getString(3));
+        product.setDesc(cursor.getString(4));
         return product;
     }
 
-    public List<Product> getAllProducts(){
-        List<Product> allProducts = new ArrayList<Product>();
+    public ArrayList<Product> getAllProducts(){
+        ArrayList<Product> allProducts = new ArrayList<Product>();
         SQLiteDatabase db = getReadableDatabase();
         String selectQuery = "SELECT * from " + PRODUCT_TABLE;
         Cursor cursor = db.rawQuery(selectQuery,null);
@@ -94,7 +96,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allProducts;
     }
 
-    public int updateProduct(Product product){
+    public void updateProduct(Product product){
         SQLiteDatabase db = getWritableDatabase();
         //Making values
         ContentValues values = new ContentValues();
@@ -102,8 +104,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PRODUCT_PRICE, product.getPrice());
         values.put(PRODUCT_BRAND, product.getBrand());
         values.put(PRODUCT_DESC, product.getDesc());
+        System.out.println(String.valueOf(product.getId()));
         //Executing update data
-        return db.update(PRODUCT_TABLE,values, PRODUCT_ID+"=?", new String[]{String.valueOf(product.getId())});
+//        return db.update(PRODUCT_TABLE,values, PRODUCT_ID+" = ?", new String[]{String.valueOf(product.getId())});
+        db.update(PRODUCT_TABLE,values, PRODUCT_ID+" = ?", new String[]{String.valueOf(product.getId())});
     }
 
     public void deleteProduct(Product product){

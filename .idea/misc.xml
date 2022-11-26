@@ -11,6 +11,18 @@
         <entry key="..\:/Android Project/PAPB17-11/app/src/main/res/layout/activity_read_data.xml" value="0.22826086956521738" />
         <entry key="..\:/Android Project/PAPB17-11/app/src/main/res/layout/product_rv_item.xml" value="0.22826086956521738" />
         <entry key="..\:/AndroidProject/PAPB17-11/app/src/main/res/layout/activity_main.xml" value="0.17806484295845998" />
+        <entry key="..\:/AndroidProject/TugasPAPB17-11/app/src/main/res/drawable/bg.xml" value="0.195" />
+        <entry key="..\:/AndroidProject/TugasPAPB17-11/app/src/main/res/drawable/delete_bg.xml" value="0.2455" />
+        <entry key="..\:/AndroidProject/TugasPAPB17-11/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.2455" />
+        <entry key="..\:/AndroidProject/TugasPAPB17-11/app/src/main/res/drawable/ic_baseline_delete_forever_24.xml" value="0.2455" />
+        <entry key="..\:/AndroidProject/TugasPAPB17-11/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.196" />
+        <entry key="..\:/AndroidProject/TugasPAPB17-11/app/src/main/res/drawable/input_bg.xml" value="0.2455" />
+        <entry key="..\:/AndroidProject/TugasPAPB17-11/app/src/main/res/drawable/rv_bg.xml" value="0.2455" />
+        <entry key="..\:/AndroidProject/TugasPAPB17-11/app/src/main/res/layout/activity_edit.xml" value="0.16" />
+        <entry key="..\:/AndroidProject/TugasPAPB17-11/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/AndroidProject/TugasPAPB17-11/app/src/main/res/layout/activity_product_detail.xml" value="0.275" />
+        <entry key="..\:/AndroidProject/TugasPAPB17-11/app/src/main/res/layout/activity_read_data.xml" value="0.1" />
+        <entry key="..\:/AndroidProject/TugasPAPB17-11/app/src/main/res/layout/product_rv_item.xml" value="0.25" />
       </map>
     </option>
   </component>
